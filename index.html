@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Error banner for localStorage warnings -->
+  <div id="error-banner" role="alert" aria-live="polite" hidden>
+    <p id="error-banner-message"></p>
+  </div>
+
+  <header>
+    <button id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
+  </header>
+
+  <main>
+
+    <!-- Greeting Widget -->
+    <section id="greeting-widget" aria-label="Greeting">
+      <div id="greeting-time"></div>
+      <div id="greeting-date"></div>
+      <div id="greeting-message"></div>
+      <form id="name-form">
+        <label for="name-input">Your name</label>
+        <input id="name-input" type="text" placeholder="Enter your name" autocomplete="off" />
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+    <!-- Focus Timer Widget -->
+    <section id="timer-widget" aria-label="Focus Timer">
+      <div id="timer-display">05:00</div>
+      <div id="timer-status" hidden></div>
+      <div id="timer-controls">
+        <button id="timer-start" type="button">Start</button>
+        <button id="timer-stop" type="button">Stop</button>
+        <button id="timer-reset" type="button">Reset</button>
+      </div>
+    </section>
+
+    <!-- To-Do List Widget -->
+    <section id="todos-widget" aria-label="To-Do List">
+      <form id="todo-form">
+        <label for="todo-input">New task</label>
+        <input id="todo-input" type="text" placeholder="Add a task…" autocomplete="off" />
+        <button type="submit">Add</button>
+        <span id="todo-validation" role="alert" aria-live="polite"></span>
+      </form>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <!-- Quick Links Widget -->
+    <section id="links-widget" aria-label="Quick Links">
+      <form id="links-form">
+        <label for="link-label-input">Label</label>
+        <input id="link-label-input" type="text" placeholder="Label" autocomplete="off" />
+        <label for="link-url-input">URL</label>
+        <input id="link-url-input" type="url" placeholder="https://example.com" autocomplete="off" />
+        <button type="submit">Add Link</button>
+        <span id="links-validation" role="alert" aria-live="polite"></span>
+      </form>
+      <div id="links-list"></div>
+    </section>
+
+  </main>
+
+  <script defer src="js/app.js"></script>
+</body>
+</html>
